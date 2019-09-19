@@ -1,4 +1,4 @@
-image: alpine
+image: docker
 
 before_script:
   - apt-get update
