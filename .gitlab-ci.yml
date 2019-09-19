@@ -1,4 +1,4 @@
-image: gcc
+image: alpine
 
 before_script:
   - apt-get update
@@ -19,7 +19,7 @@ c-build:
 cpp-build:
     stage: build
     script:
-        - gcc++ src/testcpp.cpp -o cppbinary
+        - g++ src/testcpp.cpp -o cppbinary
     artifacts:
         paths:
             - cppbinary
