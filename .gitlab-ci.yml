@@ -1,0 +1,19 @@
+image: gcc
+
+build: 
+    stage: build
+    
+    script: 
+        - gcc src/c-test.c -o mybinary
+
+    artifacts:
+        paths:
+            - mybinary
+    cache:
+        paths: 
+            - "*.o"
+
+test:
+  stage: test
+  script:
+    - ./mybinary
