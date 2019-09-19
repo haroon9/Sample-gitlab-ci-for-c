@@ -26,5 +26,5 @@ cpp-build:
 test:
   stage: test
   script:
-    - ./mybinary
+    - ./cbinary
     - ./cppbinary
