@@ -1,5 +1,9 @@
 image: gcc
 
+before_script:
+  - apt-get update
+  - apt-get install -y gcc g++
+
 c-build: 
     stage: build
     script: 
@@ -15,7 +19,7 @@ c-build:
 cpp-build:
     stage: build
     script:
-        - gcc src/testcpp.cpp -o cppbinary
+        - gcc++ src/testcpp.cpp -o cppbinary
     artifacts:
         paths:
             - cppbinary
