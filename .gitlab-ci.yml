@@ -15,7 +15,7 @@ c-build:
 cpp-build:
     stage: build
     script:
-        - gcc src/cpptest.cpp -o cppbinary
+        - gcc src/testcpp.cpp -o cppbinary
     artifacts:
         paths:
             - cppbinary
