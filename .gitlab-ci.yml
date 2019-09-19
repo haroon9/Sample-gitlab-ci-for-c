@@ -1,10 +1,9 @@
 image: gcc
 
-build: 
+c-build: 
     stage: build
-    
     script: 
-        - gcc src/c-test.c -o mybinary
+        - gcc src/c-test.c -o cbinary
 
     artifacts:
         paths:
@@ -13,7 +12,19 @@ build:
         paths: 
             - "*.o"
 
+cpp-build:
+    stage: build
+    script:
+        - gcc src/cpptest.cpp -o cppbinary
+    artifacts:
+        paths:
+            - cppbinary
+    cache:
+        paths: 
+            - "*.o"
+
 test:
   stage: test
   script:
     - ./mybinary
+    - ./cppbinary
