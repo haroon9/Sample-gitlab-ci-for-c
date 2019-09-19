@@ -7,7 +7,7 @@ c-build:
 
     artifacts:
         paths:
-            - mybinary
+            - cbinary
     cache:
         paths: 
             - "*.o"
